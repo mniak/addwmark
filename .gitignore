@@ -49,4 +49,5 @@ autom4te.cache
 config.status
 config.log
 *.o
-*.tar.gz
+*.tar.gzbuild/
+build/
