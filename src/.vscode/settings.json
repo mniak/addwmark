@@ -1,6 +1,9 @@
 {
     "files.exclude": {
         "**/*.o": true,
-        "**/addwmark": true
+        "**/addwmark": true,
+        ".deps": true,
+        "Makefile*": true,
+        ".vscode": true,
     }
 }
