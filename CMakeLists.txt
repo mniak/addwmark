@@ -1,3 +1,2 @@
-cmake_minimum_required (VERSION 2.6)
-project (addwmark)
-add_executable(addwmark  src/addwmark.cpp)
+cmake_minimum_required(VERSION 3.0.2)
+add_subdirectory(src)
