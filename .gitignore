@@ -22,6 +22,6 @@ config.log
 *.o
 *.tar.gz
 build/
-*.swp
+**.swp
 
 .DS_Store
