@@ -5,6 +5,9 @@
         ".deps": true,
         "Makefile*": true,
         ".vscode": true,
+        "**.swp": true,
+        "CMake*": true,
+        "*.cmake": true
     },
     "C_Cpp.intelliSenseEngineFallback": "Disabled"
 }
