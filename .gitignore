@@ -51,3 +51,4 @@ config.log
 *.o
 *.tar.gzbuild/
 build/
+*.swp
