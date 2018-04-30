@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$(uname)" == "Darwin" ]; then
+  echo "On Darwin, therefore using glibtoolize instead of libtoolize"
+  glibtoolize
+else
+  echo "OS other than Darwin. Using libtoolize"
+  libtoolize
+fi
+aclocal -I m4
+autoconf
+automake --add-missing
