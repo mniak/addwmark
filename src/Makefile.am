@@ -2,9 +2,11 @@ bin_PROGRAMS = addwmark
 
 addwmark_SOURCES = addwmark.cpp
 
-AM_CPPFLAGS = \
-    $(BOOST_CPPFLAGS)
+addwmark_CPPFLAGS = \
+	$(OPENCV_CPPFLAGS) \
+    $(BOOST_PROGRAM_OPTIONS_CPPFLAGS)
 
-AM_LDFLAGS = \
-    $(BOOST_LDFLAGS)
+addwmark_LDFLAGS = \
+	$(OPENCV_LDFLAGS) \
+    $(BOOST_PROGRAM_OPTIONS_LDFLAGS)
 
