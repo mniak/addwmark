@@ -10,8 +10,8 @@ AC_CONFIG_FILES([Makefile src/Makefile])
 
 AX_OPENCV
 
-BOOST_REQUIRE
-BOOST_PROGRAM_OPTIONS
+AX_BOOST_BASE([],[],[ AC_MSG_ERROR([boost was not found on your system])])
+AX_BOOST_PROGRAM_OPTIONS()
 
 AC_OUTPUT
 
