@@ -25,14 +25,15 @@ void addWatermark(Mat &image, Mat watermark, float alpha, Size wmPadding, Size w
     
     addWeighted(watermark, alpha, image(rect), 1, 0.0, image(rect));
 }
-Size parseSize(string sizeStr) {
+Size parseSize(string sizeStr, int defaultX=0, int defaultY=0) {
     auto rSize = regex("^(\\d+)x(\\d+)$");
     smatch match;
     if (regex_match(sizeStr, match, rSize)) {
-        cout << "x=" << stoi(match[1].str()) << endl;
-        cout << "y=" << stoi(match[2].str()) << endl;
+        int x = stoi(match[1].str());
+        int y = stoi(match[2].str());
+        return Size(x,y);
     } else {
-        return NULL;
+        return Size(defaultX, defaultY);
     }
 }
 int main(int argc, char** argv) {
@@ -70,10 +71,9 @@ int main(int argc, char** argv) {
         return -2;
     }
 
-    auto wmMaxSize = Size(300, 200);
-    auto wmPadding = Size(20,20); 
+    auto wmMaxSize = parseSize(max_sizeStr, 300, 200);
+    auto wmPadding = parseSize(paddingStr, 20, 20); 
 
     addWatermark(image, watermark, alpha, wmPadding, wmMaxSize); 
-
     return 0;
 }
